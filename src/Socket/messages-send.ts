@@ -679,7 +679,7 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 					attrs: {
 						to: jid,
 						id: msgId,
-						type: getMessageType(message),
+						type: getTypeMessage(message),
 						...(additionalAttributes || {})
 					},
 					content: binaryNodeContent
@@ -956,7 +956,7 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 				attrs: {
 					id: msgId,
 					to: destinationJid,
-					type: getMessageType(message),
+					type: getTypeMessage(message),
 					...(additionalAttributes || {})
 				},
 				content: binaryNodeContent
@@ -1224,6 +1224,7 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 		getPrivacyTokens,
 		assertSessions,
 		relayMessage,
+		getButtonArgs,
 		sendReceipt,
 		sendReceipts,
 		readMessages,
